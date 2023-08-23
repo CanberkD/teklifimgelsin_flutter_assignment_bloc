@@ -1,8 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:teklifimgelsin_flutter_assignment_bloc/product/constants/enums/arguments.dart';
 import 'package:teklifimgelsin_flutter_assignment_bloc/product/constants/enums/button_list_items.dart';
+import 'package:teklifimgelsin_flutter_assignment_bloc/product/constants/navigation/route_names.dart';
 import 'package:teklifimgelsin_flutter_assignment_bloc/views/form-page/model/form_button_model.dart';
+import 'package:teklifimgelsin_flutter_assignment_bloc/views/offer-listing-page/model/form_result_model.dart';
 
 part 'form_page_state.dart';
 
@@ -225,6 +228,19 @@ class FormPageCubit extends Cubit<FormPageState> {
   }
 
   void formCompleted(BuildContext context){
-    print('formCompleted');
+    //TeklifimGelsin
+    
+    //For reach to values of current state. 
+    FormPageCompleted currentState =  state as FormPageCompleted;
+    
+    //Create Form Result model with current state.
+    FormResultModel formResultModel = FormResultModel(
+      age: selectedAgeIndex+1, 
+      spendingHabitsList: currentState.spendingHabitList,
+      expectationsList: currentState.expectationList,
+    );
+
+    //Push OfferListingPage with formResultModel.
+    Navigator.pushNamed(context, ProjectRoutes.offerListingPage.name, arguments: {Arguments.formResultModel: formResultModel});
   }
 }
