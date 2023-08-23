@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #Http
+  dio: ^5.3.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
