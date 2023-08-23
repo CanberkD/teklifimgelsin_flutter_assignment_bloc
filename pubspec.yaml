@@ -13,6 +13,10 @@ dependencies:
   #Http
   dio: ^5.3.2
 
+  #Core
+  get_it: ^7.6.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
