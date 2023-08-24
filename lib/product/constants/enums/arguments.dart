@@ -1,0 +1,3 @@
+enum Arguments{
+  formResultModel;
+}
